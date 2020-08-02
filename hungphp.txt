@@ -1,0 +1,122 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th7 17, 2020 lúc 04:34 PM
+-- Phiên bản máy phục vụ: 10.4.11-MariaDB
+-- Phiên bản PHP: 7.4.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Cơ sở dữ liệu: `hungphp`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `sanpham`
+--
+
+CREATE TABLE `sanpham` (
+  `id_sp` int(10) NOT NULL,
+  `tensp` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `loai` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `gia` double NOT NULL,
+  `soluong` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `sanpham`
+--
+
+INSERT INTO `sanpham` (`id_sp`, `tensp`, `loai`, `gia`, `soluong`) VALUES
+(1, 'Kính thiên văn Celestron', 'Celestron Khúc xạ', 1500000, 150),
+(5, 'Máy lọc nước Kangaroo', 'Máy lọc nước hàng đầu Việt Nam', 25000, 15),
+(23, 'Máy giặt Panasonic', 'Đồ gia dụng', 2000000, 5),
+(26, 'Quạt Sanzo', 'Đồ gia dụng', 500000, 125),
+(27, 'Đèn học Rạng Đông', 'Đồ dùng hoc tập', 35000, 10),
+(28, 'Máy bơm Standard', 'Máy bơm', 6000000, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `taikhoan`
+--
+
+CREATE TABLE `taikhoan` (
+  `id_tk` int(10) NOT NULL,
+  `tendangnhap` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `matkhau` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `ten` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `sdt` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `level` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `taikhoan`
+--
+
+INSERT INTO `taikhoan` (`id_tk`, `tendangnhap`, `matkhau`, `ten`, `sdt`, `level`) VALUES
+(1, 'admin', 'admin', 'Đặng Văn Hùng', '0344224268', 1),
+(16, 'vta', '123', 'Victor Alan', '012345678', 2),
+(28, 'danghung', '123', 'Văn Hùng', '013213224', 2),
+(29, 'yuamikami', '12345', 'Yua Mikami', '0342568798', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tonkho`
+--
+
+CREATE TABLE `tonkho` (
+  `id_tonkho` int(10) NOT NULL,
+  `soluong` int(50) NOT NULL,
+  `tensp` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Chỉ mục cho các bảng đã đổ
+--
+
+--
+-- Chỉ mục cho bảng `sanpham`
+--
+ALTER TABLE `sanpham`
+  ADD PRIMARY KEY (`id_sp`);
+
+--
+-- Chỉ mục cho bảng `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  ADD PRIMARY KEY (`id_tk`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `sanpham`
+--
+ALTER TABLE `sanpham`
+  MODIFY `id_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT cho bảng `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  MODIFY `id_tk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
