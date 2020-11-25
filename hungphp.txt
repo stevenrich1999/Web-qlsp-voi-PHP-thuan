@@ -2,8 +2,8 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 17, 2020 lúc 04:34 PM
+-- Máy chủ: 127.0.0.1:3308
+-- Thời gian đã tạo: Th10 25, 2020 lúc 02:47 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.5
 
@@ -43,9 +43,8 @@ INSERT INTO `sanpham` (`id_sp`, `tensp`, `loai`, `gia`, `soluong`) VALUES
 (1, 'Kính thiên văn Celestron', 'Celestron Khúc xạ', 1500000, 150),
 (5, 'Máy lọc nước Kangaroo', 'Máy lọc nước hàng đầu Việt Nam', 25000, 15),
 (23, 'Máy giặt Panasonic', 'Đồ gia dụng', 2000000, 5),
-(26, 'Quạt Sanzo', 'Đồ gia dụng', 500000, 125),
-(27, 'Đèn học Rạng Đông', 'Đồ dùng hoc tập', 35000, 10),
-(28, 'Máy bơm Standard', 'Máy bơm', 6000000, 2);
+(26, 'Quạt Sanzo', 'Đồ gia dụng', 500000, 1258),
+(27, 'Đèn học Rạng Đông', 'Đồ dùng hoc tập', 35000, 10);
 
 -- --------------------------------------------------------
 
@@ -67,10 +66,11 @@ CREATE TABLE `taikhoan` (
 --
 
 INSERT INTO `taikhoan` (`id_tk`, `tendangnhap`, `matkhau`, `ten`, `sdt`, `level`) VALUES
-(1, 'admin', 'admin', 'Đặng Văn Hùng', '0344224268', 1),
+(1, 'admin', 'admin', 'Hùng Steven', '0123456789', 1),
 (16, 'vta', '123', 'Victor Alan', '012345678', 2),
 (28, 'danghung', '123', 'Văn Hùng', '013213224', 2),
-(29, 'yuamikami', '12345', 'Yua Mikami', '0342568798', 2);
+(29, 'yuamikami', '12345', 'Yua Mikami', '0342568798', 2),
+(32, 'emi', '123', 'Emi Fukuda', '0123', 2);
 
 -- --------------------------------------------------------
 
@@ -108,13 +108,13 @@ ALTER TABLE `taikhoan`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `id_tk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_tk` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
